@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: -8919308430697144025}
   - component: {fileID: 3771251492445986386}
   - component: {fileID: 1811567467289380922}
-  m_Layer: 0
+  - component: {fileID: 3871704594525421411}
+  m_Layer: 7
   m_Name: Enemy 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,14 +29,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4527140153184381562}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3652103516080442990}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &1443990010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5e3b199dcc8f34da7d3cc68bde90ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  isPlayer: 0
+  health: 30
+  score: 100
+  hitEffect: {fileID: 3651847867881688046, guid: f6a457c77594a8c408c1b0ec96b83694, type: 3}
+  applyCameraShake: 0
 --- !u!114 &1811567467289380922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +116,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 25
+--- !u!114 &3871704594525421411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4527140153184381562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd449fb87676ec42b9a67323f2bfaf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projecilePrefab: {fileID: 6334119535408759509, guid: 36430a2e4c541674f900068f6ad65678, type: 3}
+  projecileSpeed: 10
+  projecileLifetime: 5
+  basefiringRate: 1
+  useAI: 1
+  firingRateVariance: 0.5
+  minimumFiringRate: 0.1
+  isFiring: 0
 --- !u!1 &5728223281948834454
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3652103516080442990}
   - component: {fileID: 7804715608405874283}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemyBlack1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
