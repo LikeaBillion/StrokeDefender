@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2190306821798070952}
   - component: {fileID: 2190306821798070959}
   m_Layer: 0
-  m_Name: stars_0
+  m_Name: sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,12 +104,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: 67f21b83d518bf1449c7a71a32617797, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73cb8c369dba5c242b747ad4f12eead0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 20.48, y: 20.48}
+  m_Size: {x: 32, y: 48.011723}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9145ab58870d7554c9f18f8350d01139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: {x: 0, y: 0.1}
+  moveSpeed: {x: 0.001, y: 0.01}
 --- !u!1 &2190306822067293741
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 2190306822067293736}
   - component: {fileID: 2190306822067293743}
   m_Layer: 0
-  m_Name: stars_1
+  m_Name: clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,7 +200,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: eb96ff1da65f06b41a5e209e885a36e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83bc16a422699e74f80c25182cc5c188, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

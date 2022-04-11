@@ -7,8 +7,9 @@ using TMPro;
 public class UIDisplay : MonoBehaviour
 {
     [Header("Health")]
-    [SerializeField] Slider healthSlider;
+    [SerializeField] List<GameObject> Hearts;
     [SerializeField] Health playerHealth;
+    int currentHealth;
 
     [Header("Score")]
     [SerializeField] TextMeshProUGUI scoreText;
@@ -17,15 +18,21 @@ public class UIDisplay : MonoBehaviour
     void Awake() {
         scoreKeeper = FindObjectOfType<ScoreKeeper>();    
     }    
-    void Start()
-    {
-        healthSlider.maxValue = playerHealth.GetHealth();
+    void Start(){   
+        currentHealth = playerHealth.GetHealth();
     }
 
     
     void Update()
-    {
-        healthSlider.value = playerHealth.GetHealth();
+    {            
+        UpdateHealth();
         scoreText.text = scoreKeeper.GetScore().ToString("000000000");
+    }
+
+    void UpdateHealth(){
+        if(currentHealth != playerHealth.GetHealth()){
+            currentHealth = playerHealth.GetHealth();
+            Destroy(Hearts[currentHealth]);
+        }
     }
 }

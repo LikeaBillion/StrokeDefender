@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     Vector2 maxBounds;
 
     Shooter shooter;
+    Health health;
 
     void Awake() {
         shooter = GetComponent<Shooter>();
