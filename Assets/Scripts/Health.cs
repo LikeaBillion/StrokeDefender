@@ -16,9 +16,10 @@ public class Health : MonoBehaviour
    //imports for other scripts
    CameraShake cameraShake;
    AudioPlayer audioPlayer;
-   AudioSource audioSource;
    ScoreKeeper scoreKeeper;
    LevelManager levelManager;
+  
+   
 
 
     void Awake() {
@@ -26,7 +27,8 @@ public class Health : MonoBehaviour
         audioPlayer = FindObjectOfType<AudioPlayer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
         cameraShake = Camera.main.GetComponent<CameraShake>();
-        audioSource =  FindObjectOfType<AudioSource>();
+        
+
     }
 
    void OnTriggerEnter2D(Collider2D other) {
@@ -75,9 +77,7 @@ public class Health : MonoBehaviour
        if(!isPlayer){
            scoreKeeper.ModifyScore(score);
            if(isSpecial){
-                Time.timeScale = 0.01f;
-                audioSource.pitch = 0.5f;
-
+                levelManager.Question();
             }
        }
        //when is player dies

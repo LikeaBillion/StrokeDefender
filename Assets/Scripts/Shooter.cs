@@ -16,6 +16,8 @@ public class Shooter : MonoBehaviour
     [SerializeField] float minimumFiringRate = 0.1f;
 
     [HideInInspector]public bool isFiring;
+    [HideInInspector]public bool noFire = false;
+    
 
     Coroutine firingCoroutine;
     AudioPlayer audioPlayer;
@@ -31,7 +33,9 @@ public class Shooter : MonoBehaviour
     }
 
     void Update(){
-        Fire();
+        if(!noFire){
+            Fire();
+        }
     }
 
     void Fire(){
@@ -58,4 +62,6 @@ public class Shooter : MonoBehaviour
             yield return new WaitForSeconds(timeToNextProjectile);
         }
     }
+
+    
 }

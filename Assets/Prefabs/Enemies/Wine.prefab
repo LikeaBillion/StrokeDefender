@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 1775004614677038251}
   - component: {fileID: 1443990010}
   - component: {fileID: -7594024382185247368}
-  - component: {fileID: -8919308430697144025}
   - component: {fileID: 3771251492445986386}
   - component: {fileID: 1811567467289380922}
   - component: {fileID: 3871704594525421411}
+  - component: {fileID: 2154498831260441207}
   m_Layer: 7
-  m_Name: Enemy 0
+  m_Name: Wine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,22 +70,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &-8919308430697144025
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4527140153184381562}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0019727647, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.35598776
 --- !u!114 &3771251492445986386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  isQuestion: 1
+  isSpecial: 0
   health: 2
   score: 100
   hitEffect: {fileID: 3651847867881688046, guid: f6a457c77594a8c408c1b0ec96b83694, type: 3}
@@ -137,6 +121,37 @@ MonoBehaviour:
   firingRateVariance: 0.5
   minimumFiringRate: 0.1
   isFiring: 0
+  noFire: 0
+--- !u!60 &2154498831260441207
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4527140153184381562}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.2012915, y: 0.55652976}
+      - {x: -0.31190228, y: 0.03600079}
+      - {x: -0.53594285, y: -0.54692477}
+      - {x: 0.057840645, y: -0.31651396}
+      - {x: 0.58936083, y: 0.24611354}
 --- !u!1 &5728223281948834454
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +163,7 @@ GameObject:
   - component: {fileID: 3652103516080442990}
   - component: {fileID: 7804715608405874283}
   m_Layer: 7
-  m_Name: enemyBlack1
+  m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,13 +176,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5728223281948834454}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1775004614677038251}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &7804715608405874283
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -208,7 +223,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f54503fb95d06a044ad9e0a51c2c931c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a023e13a1da6dd949a50da3cfb3c5d32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
