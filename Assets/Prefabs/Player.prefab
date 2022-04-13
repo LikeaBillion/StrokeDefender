@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
+  isSpecial: 0
   health: 5
   score: 100
   hitEffect: {fileID: 3651847867881688046, guid: f6a457c77594a8c408c1b0ec96b83694, type: 3}
@@ -111,6 +112,7 @@ MonoBehaviour:
   firingRateVariance: 0
   minimumFiringRate: 0.1
   isFiring: 0
+  noFire: 0
 --- !u!114 &1209864082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 9
+  pauseMenuPrefab: {fileID: 4625234615223743927, guid: 46485e11f4a3bc342a51a226b5ed7416, type: 3}
   paddingLeft: 0.5
   paddingRight: 0.5
   paddingTop: 5

@@ -82,6 +82,7 @@ public class Health : MonoBehaviour
        }
        //when is player dies
        else{
+           scoreKeeper.finalScore(levelManager.scene);
            levelManager.GameOver();
        }
        //game object destroyed

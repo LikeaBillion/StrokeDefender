@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     Shooter[] shooters;
     AudioSource audioSource;
     Questions questions;
+    PauseMenu pauseMenu;
+    public string scene;
 
 
     void Awake() {
@@ -18,8 +20,13 @@ public class LevelManager : MonoBehaviour
         questions = FindObjectOfType<Questions>();
         audioSource =  FindObjectOfType<AudioSource>();
         shooters = FindObjectsOfType<Shooter>();
+        pauseMenu = FindObjectOfType<PauseMenu>();
+        scene = SceneManager.GetActiveScene().name;        
+    }
+
+    void Start(){
         questions.HideQuestion();
-    
+        pauseMenu.noPause();
     }
 
     public void LoadLevel(string levelname){
@@ -29,6 +36,10 @@ public class LevelManager : MonoBehaviour
 
     public void MainMenu(){
         LoadLevel("MainMenu");
+    }
+
+    public void LevelSelect(){
+        LoadLevel("LevelSelect");
     }
 
     public void Level1(){
@@ -44,6 +55,15 @@ public class LevelManager : MonoBehaviour
         Application.Quit();
         Debug.Log("Quit game");
     }
+
+    public void PauseGame(){
+        pauseMenu.Pause();
+    }
+
+     public void UnPauseGame(){
+        pauseMenu.UnPause();
+    }
+
 
     public void Question(){
         questions.ShowQuestion();

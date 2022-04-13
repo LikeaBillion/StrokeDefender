@@ -24,7 +24,6 @@ public class EnemySpawner : MonoBehaviour
 
     //coroutine for spawning waves
     IEnumerator SpawnEnemyWaves(){
-        do{
             foreach(WaveConfigSO wave in waveConfigs){
             //currentwave = wave in waveConfig
             currentWave = wave;
@@ -36,8 +35,7 @@ public class EnemySpawner : MonoBehaviour
             }
             //yield for time between waves
             yield return new WaitForSeconds(timeBetweenWaves);
-            }
+        
         }
-        while(isLooping == true);
     }
 }

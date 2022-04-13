@@ -7,8 +7,10 @@ public class Player : MonoBehaviour
 {
     //field for movespeed of the player
     [SerializeField] float moveSpeed = 5f;
+
     //movement rawInput
     Vector2 rawInput;
+    public bool paused;
 
     //fields for padding to guide bounds
     [SerializeField] float paddingLeft;
@@ -22,9 +24,12 @@ public class Player : MonoBehaviour
 
     Shooter shooter;
     Health health;
+    LevelManager levelManager;    
 
     void Awake() {
         shooter = GetComponent<Shooter>();
+        levelManager= FindObjectOfType<LevelManager>();
+        paused = false;
     }
     void Start(){
         InitBounds();
@@ -60,6 +65,7 @@ public class Player : MonoBehaviour
 
     void OnMove(InputValue value){
         //gets raw vector2 on keypress
+        if(paused){return;}
         rawInput = value.Get<Vector2>();
         
     }
@@ -67,6 +73,12 @@ public class Player : MonoBehaviour
     void OnFire(InputValue value){
         if(shooter != null){
             shooter.isFiring = value.isPressed;
+        }
+    }
+
+    void OnPause(){
+        if (!paused) {
+                levelManager.PauseGame();
         }
     }
 }

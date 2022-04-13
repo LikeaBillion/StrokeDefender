@@ -33,10 +33,15 @@ public class ScoreKeeper : MonoBehaviour
     public void ModifyScore(int value){
         score += value;
         Mathf.Clamp(score,0,int.MaxValue);
-        Debug.Log(score);
     }
 
     public void ResetScore(){
         score =0;
+    }
+
+    public void finalScore(string scene){
+        if(PlayerPrefs.GetInt(scene) < score){
+            PlayerPrefs.SetInt(scene,score);
+        }
     }
 }
