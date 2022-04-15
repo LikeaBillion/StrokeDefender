@@ -41,6 +41,7 @@ public class ScoreKeeper : MonoBehaviour
         score =0;
     }
 
+
     public void finalScore(string scene){
         if(PlayerPrefs.GetInt(scene) < score){
             PlayerPrefs.SetInt(scene,score);
