@@ -389,9 +389,10 @@ MonoBehaviour:
   - {fileID: 7458375004949831883}
   - {fileID: 7458375005387277234}
   - {fileID: 7458375006468787511}
-  defaultAnswerSprite: {fileID: 21300000, guid: 9b9355d70ba19444482557e724e4fc24, type: 3}
-  correctAnswerSprite: {fileID: 21300000, guid: 031a036f434c5794291ea3174dbfe402, type: 3}
+  defaultAnswerSprite: {fileID: 21300000, guid: 7d5398c2118a6d246a4f38d0c34313e0, type: 3}
+  correctAnswerSprite: {fileID: 21300000, guid: 1d3c98d8ab8f01748a8650ba459391a7, type: 3}
   timerImage: {fileID: 7458375006679641987}
+  playerHealth: {fileID: 0}
 --- !u!1 &7458375005225054198
 GameObject:
   m_ObjectHideFlags: 0

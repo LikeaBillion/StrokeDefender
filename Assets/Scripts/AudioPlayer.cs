@@ -12,6 +12,10 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip damageClip;
     [SerializeField] [Range(0f,1f)] float damageVolume = 1f;
 
+    [Header("Health")]
+    [SerializeField] AudioClip healthClip;
+    [SerializeField] [Range(0f,1f)] float healthVolume = 1f;
+
     static AudioPlayer instance;
 
     public AudioPlayer GetInstance(){
@@ -39,6 +43,10 @@ public class AudioPlayer : MonoBehaviour
 
     public void PlayDamageSound(){
         PlayClip(damageClip,damageVolume);
+    }
+
+    public void PlayHealSound(){
+        PlayClip(healthClip,healthVolume);
     }
     
     void PlayClip(AudioClip clip, float volume){

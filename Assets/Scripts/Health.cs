@@ -54,10 +54,12 @@ public class Health : MonoBehaviour
        return health;
    }
 
-   void TakeDamage(int damage){
+   public void TakeDamage(int damage){
        //health is the same - damage
        health -= damage;
-
+        if(damage < 0 && health<=6){
+            audioPlayer.PlayHealSound();
+        }
        if(health <= 0){
            //if no health destroy object
            Die();
@@ -75,10 +77,12 @@ public class Health : MonoBehaviour
    void Die(){
        //when is not player adds score
        if(!isPlayer){
-           scoreKeeper.ModifyScore(score);
+           
            if(isSpecial){
                 levelManager.Question();
+                score = score*5;
             }
+            scoreKeeper.ModifyScore(score);
        }
        //when is player dies
        else{

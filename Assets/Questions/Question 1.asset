@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f4d182106497040b86556ba22a234b, type: 3}
   m_Name: Question 1
   m_EditorClassIdentifier: 
-  question: what are we?
+  question: What is a stoke?
   answers:
-  - men
-  - women
-  - cutting it close
-  - someting else
-  correctAnswerIndex: 2
+  - An issue caused by fat build up in arteries
+  - Blood flow to the brain being interupted
+  - Something my dad does in golf
+  - Bones becoming weak in the body
+  correctAnswerIndex: 1

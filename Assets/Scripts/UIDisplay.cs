@@ -35,14 +35,24 @@ public class UIDisplay : MonoBehaviour
         UpdateHealth();
         scoreText.text = scoreKeeper.GetScore().ToString("000000000");
         progressBar.value = (float)enemySpawner.GetCurrentWaveCount()/enemySpawner.GetNumberOfWaves();
-        waveText.text = "Wave: " + enemySpawner.GetCurrentWaveCount();
+        waveText.text = "Wave: " + (enemySpawner.GetCurrentWaveCount()+1);
 
     }
 
     void UpdateHealth(){
-        if(currentHealth != playerHealth.GetHealth()){
+
+        if(currentHealth > playerHealth.GetHealth()){
             currentHealth = playerHealth.GetHealth();
-            Destroy(Hearts[currentHealth]);
+            Hearts[currentHealth].SetActive(false);
+        }
+        else if(currentHealth < playerHealth.GetHealth()){
+            currentHealth = playerHealth.GetHealth();
+            if(currentHealth <5){
+                Hearts[currentHealth-1].SetActive(true);
+            }       
+            else{
+                playerHealth.TakeDamage(1);
+            }     
         }
     }
 }

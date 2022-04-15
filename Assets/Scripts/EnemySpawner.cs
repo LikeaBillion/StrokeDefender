@@ -13,11 +13,13 @@ public class EnemySpawner : MonoBehaviour
     WaveConfigSO currentWave;
     LevelManager levelManager;
     ScoreKeeper scoreKeeper;
+    Player player;
     int currentWaveCount =0;
 
     void Awake() {
         levelManager = FindObjectOfType<LevelManager>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        player = FindObjectOfType<Player>();
     }
 
     void Start(){
@@ -52,6 +54,9 @@ public class EnemySpawner : MonoBehaviour
             currentWaveCount ++;
         }
         scoreKeeper.finalScore(levelManager.scene);
+        player.FlyOfScreen();
+        player.isComplete = true;
         levelManager.LevelCompleted();
+        
     }
 }

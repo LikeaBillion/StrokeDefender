@@ -11,6 +11,8 @@ public class LevelSelect : MonoBehaviour
     [SerializeField] GameObject[] levelButtons;
     [SerializeField] Sprite defaultButtonSprite;
     [SerializeField] Sprite selectedButtonSprite;
+    [SerializeField] GameObject background;
+    [SerializeField] Sprite[] backgrounds;
     ScoreKeeper scoreKeeper;
     LevelManager levelManager;
 
@@ -32,7 +34,13 @@ public class LevelSelect : MonoBehaviour
         levelButtons[index].GetComponent<Image>().sprite = selectedButtonSprite;
         scoreKeeper.nextLevelIndex = index+4;
         string scene = levelManager.NameFromIndex(index+4);
+        ChangeBackground(index);
         levelManager.NextLevel(scene);
+    }
+
+    void ChangeBackground(int index){
+        SpriteRenderer image = background.transform.Find("sky").GetComponent<SpriteRenderer>();
+        image.sprite = backgrounds[index];
     }
 
 }

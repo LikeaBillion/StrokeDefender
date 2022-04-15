@@ -416,7 +416,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.55
+  m_fontSize: 64.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -989,8 +989,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: efaca9bf617bceb46ba81e44bf7f6dd1, type: 2}
-  m_sharedMaterial: {fileID: -941972203010956856, guid: efaca9bf617bceb46ba81e44bf7f6dd1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5faab77fff6d0e54780405791179c8c7, type: 2}
+  m_sharedMaterial: {fileID: -941972203010956856, guid: 5faab77fff6d0e54780405791179c8c7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1198,8 +1198,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Game Over!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: efaca9bf617bceb46ba81e44bf7f6dd1, type: 2}
-  m_sharedMaterial: {fileID: -941972203010956856, guid: efaca9bf617bceb46ba81e44bf7f6dd1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5faab77fff6d0e54780405791179c8c7, type: 2}
+  m_sharedMaterial: {fileID: -941972203010956856, guid: 5faab77fff6d0e54780405791179c8c7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1572,15 +1572,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3137255}
+  m_Color: {r: 0.8301887, g: 0.58348167, b: 0.58348167, a: 0.50980395}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3a2538da911e7b64ea44e881d9be66b4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1682,7 +1682,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 314140002}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: Level1
+        m_MethodName: LoadNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1705,15 +1705,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3137255}
+  m_Color: {r: 0.8301887, g: 0.58348167, b: 0.58348167, a: 0.50980395}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3a2538da911e7b64ea44e881d9be66b4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1856,8 +1856,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: efaca9bf617bceb46ba81e44bf7f6dd1, type: 2}
-  m_sharedMaterial: {fileID: -941972203010956856, guid: efaca9bf617bceb46ba81e44bf7f6dd1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5faab77fff6d0e54780405791179c8c7, type: 2}
+  m_sharedMaterial: {fileID: -941972203010956856, guid: 5faab77fff6d0e54780405791179c8c7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

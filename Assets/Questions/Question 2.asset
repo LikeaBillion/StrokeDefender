@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f4d182106497040b86556ba22a234b, type: 3}
   m_Name: Question 2
   m_EditorClassIdentifier: 
-  question: Default text
+  question: What age can strokes occur?
   answers:
-  - asd
-  - asd
-  - asd
-  - asd
+  - 0-20
+  - 20-40
+  - 40+
+  - All of the above
   correctAnswerIndex: 3

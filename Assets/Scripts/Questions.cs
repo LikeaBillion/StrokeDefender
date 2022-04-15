@@ -23,12 +23,13 @@ public class Questions : MonoBehaviour
     [Header("Timer")]
     [SerializeField] Image timerImage;
     Timer timer;
+    [Header("Health Change")]
+    [SerializeField] Health playerHealth;
 
     
     void Awake()
     {
         timer = FindObjectOfType<Timer>();
-    
     }
 
     void Update() {
@@ -54,7 +55,6 @@ public class Questions : MonoBehaviour
     }
 
     void GetNextQuestion(){
-        Debug.Log(questions.Count);
         if(questions.Count > 0){
             SetButtonState(true);
             SetDefaultButtonSprites();
@@ -103,6 +103,7 @@ public class Questions : MonoBehaviour
             questionText.text = "Correct!";
             buttonImage = answerButtons[index].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
+            playerHealth.TakeDamage(-1);
         }
         else{
             correctAnswerIndex = currentQuestion.GetCorrectAnswerIndex();
@@ -110,6 +111,7 @@ public class Questions : MonoBehaviour
             questionText.text = "Sorry, but the correct answer was;\n" + correctAnswer;
             buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
+            playerHealth.TakeDamage(1);
 
         }
     }

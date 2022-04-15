@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e98ce4b79e1dbd42b2b01bfb4401670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneLoadDelay: 2
+  scene: 
+  sceneIndex: 0

@@ -8,8 +8,6 @@ public class Player : MonoBehaviour
     //field for movespeed of the player
     [SerializeField] float moveSpeed = 5f;
 
-    //movement rawInput
-    Vector2 rawInput;
     public bool paused;
 
     //fields for padding to guide bounds
@@ -21,23 +19,29 @@ public class Player : MonoBehaviour
     //min and max bounds
     Vector2 minBounds;
     Vector2 maxBounds;
+    Vector2 delta;
 
     Shooter shooter;
     Health health;
     LevelManager levelManager;    
+    PlayerControls controls;
+
+    public bool isComplete;
 
     void Awake() {
         shooter = GetComponent<Shooter>();
         levelManager= FindObjectOfType<LevelManager>();
+        controls= FindObjectOfType<PlayerControls>();
         paused = false;
+        isComplete = false;
     }
     void Start(){
         InitBounds();
+        
     }
 
-    void Update()
-    {
-        Move();
+    void Update(){
+        if(isComplete){FlyOfScreen();}
     }
 
     //method to create bounds
@@ -49,10 +53,10 @@ public class Player : MonoBehaviour
         maxBounds = mainCamera.ViewportToWorldPoint(new Vector2(1,1));
     }
 
-    void Move()
+    public void Move(Vector2 input)
     {
         //takes rawInput and uses delta time to conform it
-        Vector2 delta = rawInput * moveSpeed * Time.deltaTime;
+        delta = input * moveSpeed * Time.deltaTime;
         //newPos to work out whether its leaving bounds
         Vector2 newPos = new Vector2();
 
@@ -64,24 +68,22 @@ public class Player : MonoBehaviour
         
     }
 
-    void OnMove(InputValue value){
-        //gets raw vector2 on keypress
-        if(paused){return;}
-        rawInput = value.Get<Vector2>();
-        
-    }
-
-    
-
-    void OnFire(InputValue value){
+    public void Fire(bool pressedValue){
         if(shooter != null){
-            shooter.isFiring = value.isPressed;
+            shooter.isFiring = pressedValue;
+        }
+    }      
+
+    public void Pause(){
+        if (!paused) {
+             levelManager.PauseGame();
         }
     }
 
-    void OnPause(){
-        if (!paused) {
-                levelManager.PauseGame();
-        }
+    public void FlyOfScreen(){
+        Camera mainCamera = Camera.main;
+        paddingTop =0;
+        maxBounds =  mainCamera.ViewportToWorldPoint(new Vector2(2,2));
+        transform.position = transform.position + new Vector3(0,1f,0)*Time.deltaTime*10;
     }
 }
