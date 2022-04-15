@@ -21,36 +21,48 @@ public class Shooter : MonoBehaviour
 
     Coroutine firingCoroutine;
     AudioPlayer audioPlayer;
+    Animator myAnimator;
     
     void Awake() {
         audioPlayer = FindObjectOfType<AudioPlayer>();
+        if(!useAI) {myAnimator = GetComponent<Animator>();}
+
     }
 
     void Start(){
         if(useAI){
             isFiring = true;
         }
+        
     }
 
     void Update(){
         if(!noFire){
             Fire();
         }
+        
     }
 
     void Fire(){
         if(isFiring && firingCoroutine == null){
             firingCoroutine = StartCoroutine(FireContinuously());
+            if(!useAI){
+                myAnimator.SetBool("isFiring", true);
+
+            }
         }
         else if(!isFiring && firingCoroutine != null){
             StopCoroutine(firingCoroutine);
+            if(!useAI){
+                myAnimator.SetBool("isFiring", false);
+            ;}
             firingCoroutine = null;
         }
     }
 
     IEnumerator FireContinuously(){
         while(true){
-            GameObject instance = Instantiate(projecilePrefab,transform.position,Quaternion.identity);
+            GameObject instance = Instantiate(projecilePrefab,transform.position + new Vector3(0,0.912f,0),Quaternion.identity);
             Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
             if(rb != null){
                 rb.velocity = transform.up * projecileSpeed;

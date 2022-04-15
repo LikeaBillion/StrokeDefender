@@ -15,8 +15,15 @@ public class UIDisplay : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     ScoreKeeper scoreKeeper;
 
+    [Header("Progress")]
+    [SerializeField] Slider progressBar;
+    [SerializeField] TextMeshProUGUI waveText;
+    EnemySpawner enemySpawner;
+
+
     void Awake() {
         scoreKeeper = FindObjectOfType<ScoreKeeper>();    
+        enemySpawner = FindObjectOfType<EnemySpawner>();
     }    
     void Start(){   
         currentHealth = playerHealth.GetHealth();
@@ -27,6 +34,9 @@ public class UIDisplay : MonoBehaviour
     {            
         UpdateHealth();
         scoreText.text = scoreKeeper.GetScore().ToString("000000000");
+        progressBar.value = (float)enemySpawner.GetCurrentWaveCount()/enemySpawner.GetNumberOfWaves();
+        waveText.text = "Wave: " + enemySpawner.GetCurrentWaveCount();
+
     }
 
     void UpdateHealth(){

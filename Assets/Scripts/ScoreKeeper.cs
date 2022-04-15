@@ -5,7 +5,9 @@ using UnityEngine;
 public class ScoreKeeper : MonoBehaviour
 {   
     static ScoreKeeper instance;
-    int score =0;
+    int score;
+    public string nextLevel = "";
+    public int nextLevelIndex;
 
     public ScoreKeeper GetInstance(){
         return instance;
@@ -42,6 +44,16 @@ public class ScoreKeeper : MonoBehaviour
     public void finalScore(string scene){
         if(PlayerPrefs.GetInt(scene) < score){
             PlayerPrefs.SetInt(scene,score);
+        }
+    }
+
+    public int GetHighScore(string scene){ 
+        int hs = PlayerPrefs.GetInt(scene);
+        if(hs > 0){
+            return hs;
+        }
+        else{
+            return 0;
         }
     }
 }

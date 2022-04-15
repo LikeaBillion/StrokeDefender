@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
         newPos.y = Mathf.Clamp(transform.position.y+delta.y,minBounds.y + paddingBottom,maxBounds.y - paddingTop);
         //sets position to new pos
         transform.position = newPos;
+        
     }
 
     void OnMove(InputValue value){
@@ -69,6 +70,8 @@ public class Player : MonoBehaviour
         rawInput = value.Get<Vector2>();
         
     }
+
+    
 
     void OnFire(InputValue value){
         if(shooter != null){

@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     Questions questions;
     PauseMenu pauseMenu;
     public string scene;
-
+    public int sceneIndex;
 
     void Awake() {
 
@@ -21,7 +21,8 @@ public class LevelManager : MonoBehaviour
         audioSource =  FindObjectOfType<AudioSource>();
         shooters = FindObjectsOfType<Shooter>();
         pauseMenu = FindObjectOfType<PauseMenu>();
-        scene = SceneManager.GetActiveScene().name;        
+        scene = SceneManager.GetActiveScene().name;
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;        
     }
 
     void Start(){
@@ -29,10 +30,25 @@ public class LevelManager : MonoBehaviour
         pauseMenu.noPause();
     }
 
+    public void NextLevel(string scene){
+        scoreKeeper.nextLevel = scene;
+    }
+
+    public void LoadNextLevel(){
+        SceneManager.LoadScene(scoreKeeper.nextLevel);
+    }
+    
+
     public void LoadLevel(string levelname){
         SceneManager.LoadScene(levelname);
-        
+        scoreKeeper.ResetScore();
     }
+
+    public void LoadLevelIndex(int index){
+        SceneManager.LoadScene(index);
+        scoreKeeper.ResetScore();
+    }
+
 
     public void MainMenu(){
         LoadLevel("MainMenu");
@@ -42,13 +58,12 @@ public class LevelManager : MonoBehaviour
         LoadLevel("LevelSelect");
     }
 
-    public void Level1(){
-        scoreKeeper.ResetScore();
-        LoadLevel("Level 1");
-    }
-
     public void GameOver(){
         StartCoroutine(WaitOnLoad("GameOver",sceneLoadDelay));
+    }
+
+     public void LevelCompleted(){
+        StartCoroutine(WaitOnLoad("LevelCompleted",sceneLoadDelay));
     }
 
     public void QuitGame(){
@@ -87,6 +102,14 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator WaitOnLoad(string levelname, float delay){
         yield return new WaitForSeconds(delay);
-        LoadLevel(levelname);
+        SceneManager.LoadScene(levelname);
+    }
+
+    public string NameFromIndex(int buildIndex){
+        string path = SceneUtility.GetScenePathByBuildIndex(buildIndex);
+        int slash = path.LastIndexOf('/');
+        string name = path.Substring(slash + 1);
+        int dot = name.LastIndexOf('.');
+        return name.Substring(0, dot);
     }
 }
