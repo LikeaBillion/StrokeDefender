@@ -66,6 +66,10 @@ public class Health : MonoBehaviour
        }
    }
 
+   public void Heal(){
+       health = 5;
+   }
+
     //method that greats the particles on hitting an enemy
    void PlayHitEffect(){
        if(hitEffect != null){

@@ -40,6 +40,7 @@ public class LevelSelect : MonoBehaviour
 
     void ChangeBackground(int index){
         SpriteRenderer image = background.transform.Find("sky").GetComponent<SpriteRenderer>();
+        
         image.sprite = backgrounds[index];
     }
 
