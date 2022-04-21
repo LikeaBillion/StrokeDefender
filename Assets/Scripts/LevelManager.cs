@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     public string scene;
     public int sceneIndex;
 
+
     void Awake() {
 
         scoreKeeper = FindObjectOfType<ScoreKeeper>();

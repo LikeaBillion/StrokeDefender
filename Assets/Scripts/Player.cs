@@ -25,13 +25,17 @@ public class Player : MonoBehaviour
     Health health;
     LevelManager levelManager;    
     PlayerControls controls;
+    ScoreKeeper scoreKeeper;
 
     public bool isComplete;
+    
 
     void Awake() {
         shooter = GetComponent<Shooter>();
         levelManager= FindObjectOfType<LevelManager>();
         controls= FindObjectOfType<PlayerControls>();
+        scoreKeeper= FindObjectOfType<ScoreKeeper>();
+
         paused = false;
         isComplete = false;
     }
@@ -86,4 +90,6 @@ public class Player : MonoBehaviour
         maxBounds =  mainCamera.ViewportToWorldPoint(new Vector2(2,2));
         transform.position = transform.position + new Vector3(0,1f,0)*Time.deltaTime*10;
     }
+
+
 }
