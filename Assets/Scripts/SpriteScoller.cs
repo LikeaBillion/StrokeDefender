@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpriteScoller : MonoBehaviour
 {
+    //speed of movement
     [SerializeField] Vector2 moveSpeed;
 
     Vector2 offset;
@@ -17,6 +18,7 @@ public class SpriteScoller : MonoBehaviour
     
     void Update()
     {
+        //moves background sprites for parallax scrolling, relative to time passed 
         offset = moveSpeed * Time.deltaTime;
         material.mainTextureOffset += offset;
     }

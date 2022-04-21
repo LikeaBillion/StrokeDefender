@@ -50,6 +50,7 @@ public class Health : MonoBehaviour
        }
    }
 
+   //getter for health
    public int GetHealth(){
        return health;
    }
@@ -66,6 +67,7 @@ public class Health : MonoBehaviour
        }
    }
 
+    //heals the player fully
    public void Heal(){
        health = 5;
    }
@@ -81,9 +83,10 @@ public class Health : MonoBehaviour
    void Die(){
        //when is not player adds score
        if(!isPlayer){
-           
+           //if is special enemy, then calls the question method to begin asking the question
            if(isSpecial){
                 levelManager.Question();
+                //if special, they are worth more score
                 score = score*5;
             }
             scoreKeeper.ModifyScore(score);
@@ -96,7 +99,8 @@ public class Health : MonoBehaviour
        //game object destroyed
        Destroy(gameObject);
    }
-    
+
+    //calls camera shake when damage is taken
    void ShakeCamera(){
        if(cameraShake != null && applyCameraShake){
            cameraShake.Play();

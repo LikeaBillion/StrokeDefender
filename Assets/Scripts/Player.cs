@@ -8,8 +8,6 @@ public class Player : MonoBehaviour
     //field for movespeed of the player
     [SerializeField] float moveSpeed = 5f;
 
-    public bool paused;
-
     //fields for padding to guide bounds
     [SerializeField] float paddingLeft;
     [SerializeField] float paddingRight;
@@ -21,13 +19,17 @@ public class Player : MonoBehaviour
     Vector2 maxBounds;
     Vector2 delta;
 
+    //instances of scripts
     Shooter shooter;
     Health health;
     LevelManager levelManager;    
     PlayerControls controls;
     ScoreKeeper scoreKeeper;
 
+    //isComplete to see if the level is complete
     public bool isComplete;
+    //paused to see if the level is paused
+    public bool paused;
     
 
     void Awake() {
@@ -73,21 +75,27 @@ public class Player : MonoBehaviour
     }
 
     public void Fire(bool pressedValue){
+        //if there is no shooter= set firing pressed value
         if(shooter != null){
             shooter.isFiring = pressedValue;
         }
     }      
 
     public void Pause(){
+        //if not paused, pause the game
         if (!paused) {
              levelManager.PauseGame();
         }
     }
 
     public void FlyOfScreen(){
+        //function to handle player flying offscreen
         Camera mainCamera = Camera.main;
+        //removes padding
         paddingTop =0;
+        //changes max bounds
         maxBounds =  mainCamera.ViewportToWorldPoint(new Vector2(2,2));
+        //flys towards the top of the screen
         transform.position = transform.position + new Vector3(0,1f,0)*Time.deltaTime*10;
     }
 

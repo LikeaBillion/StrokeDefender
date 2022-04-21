@@ -384,6 +384,39 @@ MonoBehaviour:
   questions:
   - {fileID: 11400000, guid: 942f5e172e83fb749b7b60a5bb29152d, type: 2}
   - {fileID: 11400000, guid: d935f79811c97b74bb895de4d9a7c179, type: 2}
+  - {fileID: 11400000, guid: cfc41086c023bbc4c8689d5711361b36, type: 2}
+  - {fileID: 11400000, guid: da94ff8b312d8454190d0d5d8c841fc6, type: 2}
+  - {fileID: 11400000, guid: 4cd6b59ca3150844cab233a7e4f68629, type: 2}
+  - {fileID: 11400000, guid: bdc79103070ed9442bb4fa73a08b8041, type: 2}
+  - {fileID: 11400000, guid: f0fd4fce40be2c04da3d101500bc409a, type: 2}
+  - {fileID: 11400000, guid: e0e779eb6a7be534aa36baaf6b890e57, type: 2}
+  - {fileID: 11400000, guid: da4cf074d99b4a743b8feb2eb80b7705, type: 2}
+  - {fileID: 11400000, guid: c18ee012c5626854cb689b13b0f12d14, type: 2}
+  - {fileID: 11400000, guid: ff0b7a48d17d11d46abbd956cb736f82, type: 2}
+  - {fileID: 11400000, guid: e3b9d1ab53810d646bfe5af09379e861, type: 2}
+  - {fileID: 11400000, guid: b0f59c9f68da07f4f80be0723cbcbe23, type: 2}
+  - {fileID: 11400000, guid: 7bbd8bf2f3a1d4b45a8de7425425032a, type: 2}
+  - {fileID: 11400000, guid: 9aa23ead3ebf7e1428f816131a00d4b2, type: 2}
+  - {fileID: 11400000, guid: 09a9431ad859b41438a233bd8a4488d2, type: 2}
+  - {fileID: 11400000, guid: 89044046ba590b649b4ced37923680a9, type: 2}
+  - {fileID: 11400000, guid: f819bad8f67021f4e955f02d76fdb33b, type: 2}
+  - {fileID: 11400000, guid: a27a806f8fa419042ba3caa39c8a33cf, type: 2}
+  - {fileID: 11400000, guid: 934ac7b23f0c5434e998c304c954b907, type: 2}
+  - {fileID: 11400000, guid: 02e9938e107261b4b973aea8d5fa67ed, type: 2}
+  - {fileID: 11400000, guid: 3d646b5c23ade0049bf5911f801e4dd4, type: 2}
+  - {fileID: 11400000, guid: 895a3028de810224fa22e89e3105f855, type: 2}
+  - {fileID: 11400000, guid: a73a89791484e034090d380e72dd91da, type: 2}
+  - {fileID: 11400000, guid: b449f16eb2a59a14b83c99aff17d5fc5, type: 2}
+  - {fileID: 11400000, guid: 083666fbe224bce4c8d2176d6c830305, type: 2}
+  - {fileID: 11400000, guid: 136fbaa8703dbc944994998a1ef956fc, type: 2}
+  - {fileID: 11400000, guid: b398684dcb7bc544e92bbf2f7c398c26, type: 2}
+  - {fileID: 11400000, guid: ad9a86e56dafcfb4d8ea104b9db2fe1a, type: 2}
+  - {fileID: 11400000, guid: 31660fa31a1aded488ad20b8cff6cb22, type: 2}
+  - {fileID: 11400000, guid: b97211db8671c9649a6fc272cae8ecc1, type: 2}
+  - {fileID: 11400000, guid: a3fec1a005332a74f96b4f8fb4d27588, type: 2}
+  - {fileID: 11400000, guid: 16cc647259b7934468d4ea0974f9b115, type: 2}
+  - {fileID: 11400000, guid: 79c213aed51c45b43af138b326b83036, type: 2}
+  - {fileID: 11400000, guid: 8d36de218689e2a4790b3a68b36f7469, type: 2}
   answerButtons:
   - {fileID: 7458375005225054198}
   - {fileID: 7458375004949831883}
@@ -694,7 +727,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7458375005728409631
 CanvasRenderer:
@@ -828,7 +861,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7458375005788589360
 CanvasRenderer:
@@ -962,7 +995,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7458375005892938719
 CanvasRenderer:
@@ -1174,7 +1207,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7458375006436371695
 CanvasRenderer:

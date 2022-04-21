@@ -1701,10 +1701,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestionsCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7458375004989233212, guid: ee4ade78009510e458ead01ce37cc7be, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee4ade78009510e458ead01ce37cc7be, type: 3}
 --- !u!1001 &2083886325

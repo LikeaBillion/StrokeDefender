@@ -47,6 +47,7 @@ public class WaveConfigSO : ScriptableObject
         return moveSpeed;
     }
 
+    //generates a random spawn time for the enemies
     public float GetRandomSpawnTime(){
         float spawnTime = Random.Range(timeBetweenEnemySpawns - spawnTimeVarience, timeBetweenEnemySpawns+spawnTimeVarience);
         return Mathf.Clamp (spawnTime,minimumSpawnTime, float.MaxValue);

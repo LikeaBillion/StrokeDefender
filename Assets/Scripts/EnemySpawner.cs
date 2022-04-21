@@ -11,9 +11,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] float timeBetweenWaves = 0f;
     //variable for the currentwave
     WaveConfigSO currentWave;
+    
+    //instances of other scripts
     LevelManager levelManager;
     ScoreKeeper scoreKeeper;
     Player player;
+
+    //counter for the current wave
     int currentWaveCount =0;
 
     void Awake() {
@@ -26,14 +30,15 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(SpawnEnemyWaves());
     }
 
+    //returns currentwave
     public WaveConfigSO GetCurrentWave(){
         return currentWave;
     }
-
+    //returns number of waves
     public int GetNumberOfWaves(){
         return waveConfigs.Count;
     }
-
+    //returns count of waves currently happened
     public int GetCurrentWaveCount(){
         return currentWaveCount;
     }
@@ -53,10 +58,14 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenWaves);
             currentWaveCount ++;
         }
+        //when all enemies have spawned..
+        //final score applied
         scoreKeeper.finalScore(levelManager.scene);
+        //script called to have the effect of the player flying of screen
         player.FlyOfScreen();
+        //level complete set to true
         player.isComplete = true;
+        //levelmanager calls the new scene level completed
         levelManager.LevelCompleted();
-        
     }
 }
