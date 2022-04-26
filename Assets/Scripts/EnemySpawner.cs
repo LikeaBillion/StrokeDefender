@@ -60,7 +60,7 @@ public class EnemySpawner : MonoBehaviour
         }
         //when all enemies have spawned..
         //final score applied
-        scoreKeeper.finalScore(levelManager.scene);
+        scoreKeeper.FinalScore(levelManager.scene);
         //script called to have the effect of the player flying of screen
         player.FlyOfScreen();
         //level complete set to true

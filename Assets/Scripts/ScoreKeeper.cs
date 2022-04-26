@@ -56,7 +56,7 @@ public class ScoreKeeper : MonoBehaviour
 
 
     //function to calculate the final score then compare to the highscore 
-    public void finalScore(string scene){
+    public void FinalScore(string scene){
         if(PlayerPrefs.GetInt(scene) < score){
             PlayerPrefs.SetInt(scene,score);
         }
